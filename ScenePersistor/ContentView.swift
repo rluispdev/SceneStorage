@@ -9,72 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var isSelectd = Int()
-    
-    init() {
-        UITabBar.appearance().unselectedItemTintColor = UIColor.black
-    }
+    @State private var isSelected = 0
     
     var body: some View {
         
-        TabView (selection: $isSelectd) {
+        TabView (selection: $isSelected) {
             
             HouseView()
-                .tabItem {
-                    if isSelectd  == 0 {
-                        Image(systemName: "house")
-                            .environment(\.symbolVariants, .fill )
-                    }else {
-                        Image(systemName: "house")
-                            .environment(\.symbolVariants, .none )
-                    }
-                }.tag(0)
-            
-            
+                .tabItem(isSelected: $isSelected, systemImageName: "house", tag: 0)
+        
             SearchView()
-                .tabItem {
-                    if isSelectd  == 1 {
-                        Image(systemName: "magnifyingglass")
-                            .environment(\.symbolVariants, .fill )
-                    }else {
-                        Image(systemName: "magnifyingglass")
-                            .environment(\.symbolVariants, .none )
-                    }
-                }.tag(1)
-            
+                .tabItem(isSelected: $isSelected, systemImageName: "magnifyingglass", tag: 1)
+              
             FriendsView()
-                .tabItem {
-                    if isSelectd  == 2 {
-                        Image(systemName: "person.2")
-                            .environment(\.symbolVariants, .fill )
-                    }else {
-                        Image(systemName: "person.2")
-                            .environment(\.symbolVariants, .none )
-                    }
-                }.tag(2)
-            
+                .tabItem(isSelected: $isSelected, systemImageName: "person.2", tag: 2)
             
             BellView()
-                .tabItem {
-                    if isSelectd  == 3 {
-                        Image(systemName: "bell")
-                            .environment(\.symbolVariants, .fill )
-                    } else {
-                        Image(systemName: "bell")
-                            .environment(\.symbolVariants, .none )
-                    }
-                }.tag(3)
-            
+                .tabItem(isSelected: $isSelected, systemImageName: "bell", tag: 3)
+        
             InBoxView()
-                .tabItem {
-                    if isSelectd  == 4 {
-                        Image(systemName: "envelope")
-                            .environment(\.symbolVariants, .fill )
-                    } else {
-                        Image(systemName: "envelope")
-                            .environment(\.symbolVariants, .none )
-                    }
-                }.tag(4)
+                .tabItem(isSelected: $isSelected, systemImageName: "envelope", tag: 4)
+            
+        }
+        .onAppear{
+                UITabBar.appearance().unselectedItemTintColor = UIColor.black
         }
         .padding()
     }
