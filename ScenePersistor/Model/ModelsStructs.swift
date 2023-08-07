@@ -11,10 +11,7 @@ import SwiftUI
 struct HouseView: View {
     var body: some View {
         
-   
             Text("Home")
-                .frame(width: 300, height: 500)
-        
     }
 }
 

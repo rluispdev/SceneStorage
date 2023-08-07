@@ -16,6 +16,7 @@ struct ContentView: View {
         TabView (selection: $isSelected) {
             
             HouseView()
+            ///Custom .tabItem
                 .tabItem(isSelected: $isSelected, systemImageName: "house", tag: 0)
         
             SearchView()
