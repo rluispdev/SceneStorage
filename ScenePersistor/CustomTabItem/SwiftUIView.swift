@@ -19,16 +19,16 @@ struct SwiftUIView: View {
                 Text("Home")
                     .tag(Tab.home)
                     
-                Text("Magnifyingglass")
+                Text("Search")
                     .tag(Tab.source)
 
-                Text("Person")
-                    .tag(Tab.home)
+                Text("Communities")
+                    .tag(Tab.comunity)
                 
-                Text("Bell")
+                Text("Notifications")
                     .tag(Tab.bells )
                     
-                Text("Envelope")
+                Text("Messages")
                     .tag(Tab.envelopes)
             }
           CustomTabBar(currentTab: $currentTab)

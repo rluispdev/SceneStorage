@@ -20,15 +20,12 @@ struct CustomTabBar: View {
                         }
                     } label: {
                         Image(tab.rawValue)
-                            .renderingMode(.template)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 27)
+                            .frame(width: 30)
                             .frame(maxWidth: .infinity)
-                        
                             .foregroundColor(currentTab == tab ? .black : .black)
                             .symbolVariant(currentTab == tab ? .fill : .none)
-                        
                     }
                 }
             }
