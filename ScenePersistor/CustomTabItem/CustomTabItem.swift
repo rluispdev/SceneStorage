@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomTabItem: ViewModifier {
     
     @Binding var isSelected: Int
+    
     let systemImageName: String
     let tag: Int
     
@@ -19,14 +20,15 @@ struct CustomTabItem: ViewModifier {
                 if isSelected == tag {
                     Image(systemName: "\(systemImageName)")
                     
-                } else {
-                    Image(systemName: systemImageName)
-                        .environment(\.symbolVariants, .none)
+                   } else {
+                        Image(systemName: systemImageName)
+                            .environment(\.symbolVariants, .none)
+                    }
                 }
-            }
             .tag(tag)
+            }
     }
-}
+
 extension View {
     func tabItem(isSelected: Binding<Int>, systemImageName: String, tag: Int) -> some View {
         self.modifier(CustomTabItem(isSelected: isSelected, systemImageName: systemImageName, tag: tag))
@@ -41,3 +43,5 @@ extension UITabBar {
         }
     }
 }
+
+ 

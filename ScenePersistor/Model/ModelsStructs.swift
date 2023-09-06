@@ -14,6 +14,9 @@ struct HouseView: View {
         List  {
             Text("Home")
                 .frame(width: 500, height: 600)
+            Image("twiiter.friend.fill")
+                .resizable()
+                
         }
     }
 }
