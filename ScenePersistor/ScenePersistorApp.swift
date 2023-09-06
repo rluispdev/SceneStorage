@@ -12,7 +12,7 @@ struct ScenePersistorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                SwiftUIView( )
+                MainView( )
             }
         }
     }
